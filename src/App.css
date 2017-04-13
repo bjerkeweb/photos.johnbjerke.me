@@ -1,24 +1,26 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  font: 87.5%/1.5 -apple-system, BlinkMacSystemFont, SF UI, Helvetica Neue, sans-serif;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  border: 0;
 }
 
-.App-intro {
-  font-size: large;
+.site-main {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.image-metadata {
+  margin: 10px 0 40px 0;
 }

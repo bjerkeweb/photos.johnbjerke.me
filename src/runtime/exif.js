@@ -17,11 +17,11 @@ ep
 const logData = (exifData) => {
   const fileInfo = exifData.data.map( image => {
     
-    // calculate aspect ratio (W * x = H)
+    // calculate aspect ratio (H * x = W)
     const aspectRatio = image.ImageSize
       .split('x')
       .map( n => parseInt(n) )
-      .reduce( (w, h) => h/w );
+      .reduce( (w, h) => w/h );
     
     return {
       fileName: image.FileName,

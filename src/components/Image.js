@@ -12,11 +12,13 @@ class Image extends Component {
   }
 
   render() {
-    const src = `./images/${this.props.name}`
+    const url = `./images/${this.props.name}`;
+    const imageName = this.props.name.split('.')[0];
     return (
-      <div>
+      <div id={imageName} className="pane pane--image">
         <img
-          src={src}
+          style={{ minWidth: `calc( (100vh - 9rem) * ${this.props.aspectRatio} )` }}
+          src={url}
         />
         <div className="image-metadata">
          { `\u0192${this.props.fStop}, ` }

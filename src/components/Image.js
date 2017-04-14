@@ -17,7 +17,7 @@ class Image extends Component {
     return (
       <div id={imageName} className="pane pane--image">
         <img
-          style={{ minWidth: `calc( (100vh - 9rem) * ${this.props.aspectRatio} )` }}
+          style={{ minWidth: `calc( (100vh - 7.5rem) * ${this.props.aspectRatio} )` }}
           src={url}
         />
         <div className="image-metadata">

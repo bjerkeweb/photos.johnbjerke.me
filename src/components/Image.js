@@ -44,7 +44,7 @@ class Image extends Component {
         >
           <div>
             <img
-              style={{ minWidth: `calc( (100vh - 7.5rem) * ${this.props.aspectRatio} )` }}
+              style={{ minWidth: `calc( (100vh - 7.2rem) * ${this.props.aspectRatio} )` }}
               className={ imgClass.join(' ') }
               src={url}
             />

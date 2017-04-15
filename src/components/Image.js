@@ -32,6 +32,12 @@ class Image extends Component {
         'image__img'
     ];
 
+    const isFrac = this.props.speed.indexOf('/') !== -1;
+
+    const speed = isFrac
+      ? <span className="frac">{ this.props.speed }</span>
+      : <span>{ this.props.speed }</span>
+
     return (
       <div id={imageName} className="pane pane--image">
         <Waypoint
@@ -50,7 +56,7 @@ class Image extends Component {
             />
             <div className="image-metadata">
              { `\u0192${this.props.fStop}, ` }
-             {this.props.speed} sec,{" "}
+             {speed} sec,{" "}
              {this.props.focalLength},{" "}
              ISO {this.props.iso} 
             </div>

@@ -82,3 +82,7 @@ h1 {
   border-radius: 4px;
   font-weight: 600;
 }
+
+.frac {
+  font-feature-settings: "frac" 1;
+}

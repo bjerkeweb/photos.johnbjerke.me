@@ -28,10 +28,8 @@ class Image extends Component {
     const imageName = this.props.name.split('.')[0];
 
     const imgClass = [
-      ( this.state.onScreen )
-        ? 'is-loaded'
-        : 'is-not-loaded',
-      'image__img'
+      this.state.onScreen ? 'is-loaded' : 'is-not-loaded',
+        'image__img'
     ];
 
     return (

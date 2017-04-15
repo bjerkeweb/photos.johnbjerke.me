@@ -9,7 +9,7 @@ html {
   height: 100%;
   overflow: hidden;
   font: 87.5%/1.5 -apple-system, BlinkMacSystemFont, SF UI, Helvetica Neue, sans-serif;
-  color: #333;
+  /*color: #333;*/
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;

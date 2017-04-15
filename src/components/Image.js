@@ -39,22 +39,25 @@ class Image extends Component {
         <Waypoint
           key={imageName}
           horizontal={true}
-          topOffset="-50%"
+          topOffset="0"
           bottomOffset="0"
           onEnter={ this.toggleOnScreen }
           onLeave={ this.toggleOnScreen }
-        />
-        <img
-          style={{ minWidth: `calc( (100vh - 7.5rem) * ${this.props.aspectRatio} )` }}
-          className={ imgClass.join(' ') }
-          src={url}
-        />
-        <div className="image-metadata">
-         { `\u0192${this.props.fStop}, ` }
-         {this.props.speed} sec,{" "}
-         {this.props.focalLength},{" "}
-         ISO {this.props.iso} 
-        </div>
+        >
+          <div>
+            <img
+              style={{ minWidth: `calc( (100vh - 7.5rem) * ${this.props.aspectRatio} )` }}
+              className={ imgClass.join(' ') }
+              src={url}
+            />
+            <div className="image-metadata">
+             { `\u0192${this.props.fStop}, ` }
+             {this.props.speed} sec,{" "}
+             {this.props.focalLength},{" "}
+             ISO {this.props.iso} 
+            </div>
+          </div>
+        </Waypoint>
       </div>
     )
   }

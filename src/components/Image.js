@@ -42,6 +42,8 @@ class Image extends Component {
       />
     )
 
+    const spinner = !this.state.isLoaded ? <div className="spinner" /> : null
+
     const placeholder = (
       <div className="image__img" />
     )
@@ -54,6 +56,7 @@ class Image extends Component {
 
     return (
       <div id={imageName} className="pane pane--image">
+        { spinner }
         <Waypoint
           key={imageName}
           horizontal={true}

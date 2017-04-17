@@ -72,6 +72,23 @@ h1 {
   text-align: right;
 }
 
+.pane__image {
+  background-color: #eee;
+}
+
+.image__img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: calc(100vh - 7.2rem);
+  transition: opacity 300ms ease-in-out;
+  opacity: 1;
+}
+
+.image__img.is-not-loaded {
+  opacity: 0;
+}
+
 .image-metadata {
   margin-top: 1.5rem;
   margin-bottom: 0.25rem;

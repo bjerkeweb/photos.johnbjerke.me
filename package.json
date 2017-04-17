@@ -10,6 +10,7 @@
     "node-exiftool": "^2.1.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-imgix": "^5.4.0",
     "react-waypoint": "^6.0.0"
   },
   "scripts": {

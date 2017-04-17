@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Waypoint from 'react-waypoint';
+import Imgix from 'react-imgix';
 
 class Image extends Component {
 
@@ -24,13 +25,26 @@ class Image extends Component {
   }
 
   render() {
-    const url = `./images/${this.props.name}`;
+    const url = `https://johnbjerkephotos.imgix.net/${this.props.name}`;
     const imageName = this.props.name.split('.')[0];
 
     const imgClass = [
-      this.state.onScreen ? 'is-loaded' : 'is-not-loaded',
+      ( this.state.onScreen && this.state.isLoaded ) ? 'is-loaded' : 'is-not-loaded',
         'image__img'
     ];
+
+    const image = (
+      <Imgix
+        fit={"max"}
+        src={url}
+        imgProps={{ onLoad: this.onLoad }}
+        className={imgClass.join(' ')}
+      />
+    )
+
+    const placeholder = (
+      <div className="image__img" />
+    )
 
     const isFrac = this.props.speed.indexOf('/') !== -1;
 
@@ -48,20 +62,19 @@ class Image extends Component {
           onEnter={ this.toggleOnScreen }
           onLeave={ this.toggleOnScreen }
         >
-          <div>
-            <img
-              style={{ minWidth: `calc( (100vh - 7.2rem) * ${this.props.aspectRatio} )` }}
-              className={ imgClass.join(' ') }
-              src={url}
-            />
-            <div className="image-metadata">
-             { `\u0192${this.props.fStop}, ` }
-             {speed} sec,{" "}
-             {this.props.focalLength},{" "}
-             ISO {this.props.iso} 
-            </div>
+          <div
+            className="pane__image"
+            style={{ minWidth: `calc( (100vh - 7.2rem) * ${this.props.aspectRatio} )` }}
+          >
+            { this.state.onScreen ? image : placeholder }
           </div>
         </Waypoint>
+        <div className="image-metadata">
+         { `\u0192${this.props.fStop}, ` }
+         {speed} sec,{" "}
+         {this.props.focalLength},{" "}
+         ISO {this.props.iso} 
+        </div>
       </div>
     )
   }

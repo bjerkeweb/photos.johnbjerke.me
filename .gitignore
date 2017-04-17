@@ -17,3 +17,6 @@ yarn-debug.log*
 yarn-error.log*
 
 src/manifest.js
+
+# Ignore symlinked folder
+public/images

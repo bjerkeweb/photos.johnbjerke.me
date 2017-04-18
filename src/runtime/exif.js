@@ -7,7 +7,7 @@ const ep          = new exiftool.ExiftoolProcess(exiftoolBin);
 ep
   .open()
   .then( ( pid ) => console.log( 'Started exiftool process %s', pid ) )
-  .then( () => ep.readMetadata( './public/images/' ) )
+  .then( () => ep.readMetadata( './src/images/' ) )
   .then( res => logData(res) )
   .then( () => ep.close() )
   .then( () => console.log('Closed exiftool') )

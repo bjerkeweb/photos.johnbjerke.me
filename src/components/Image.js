@@ -8,7 +8,7 @@ class Image extends Component {
     super();
 
     this.onLoad = this.onLoad.bind(this);
-    this.toggleOnScreen = this.toggleOnScreen.bind(this);
+    this.setOnScreen = this.setOnScreen.bind(this);
 
     this.state = {
       isLoaded: false,
@@ -19,9 +19,9 @@ class Image extends Component {
   onLoad() {
     this.setState({ isLoaded: true });
   }
-
-  toggleOnScreen() {
-    this.setState({ onScreen: !this.state.onScreen });
+  
+  setOnScreen() {
+    this.setState({ onScreen: true });
   }
 
   render() {
@@ -62,8 +62,7 @@ class Image extends Component {
           horizontal={true}
           topOffset="0"
           bottomOffset="0"
-          onEnter={ this.toggleOnScreen }
-          onLeave={ this.toggleOnScreen }
+          onEnter={ this.setOnScreen }
         >
           <div
             className="pane__image"

@@ -56,7 +56,6 @@ class Image extends Component {
 
     return (
       <div id={imageName} className="pane pane--image">
-        { spinner }
         <Waypoint
           key={imageName}
           horizontal={true}
@@ -68,6 +67,7 @@ class Image extends Component {
             className="pane__image"
             style={{ minWidth: `calc( (100vh - 7.2rem) * ${this.props.aspectRatio} )` }}
           >
+            { spinner }
             { this.state.onScreen ? image : placeholder }
           </div>
         </Waypoint>

@@ -73,6 +73,9 @@ h1 {
 }
 
 .pane__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #eee;
 }
 
@@ -93,8 +96,6 @@ h1 {
 .spinner {
   position: absolute;
   z-index: 1;
-  top: 50%;
-  left: 50%;
   width: 40px;
   height: 40px;
   background-color: #777;
